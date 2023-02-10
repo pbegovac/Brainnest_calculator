@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fredoka", cursive;
+  height: 100vh;
+  background-color: #f1f6f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calc {
+  border-radius: 10px;
+  background-color: #f74565;
+  box-shadow: 2px 5px 10px 0px #aeaeae;
+  width: 400px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.display {
+  border-radius: 6px;
+  font-size: 2.7em;
+  text-align: right;
+  background-color: #f1f6f7;
+  margin: 10px;
+  padding: 10px;
+  height: 70px;
+  width: 90%;
+  transition: all 0.09s step-start;
+}
+
+.displayAction {
+  color: #f1f6f7;
+}
+
+.button-cont {
+  border-radius: 0 0 6px 6px;
+  width: 90%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.number,
+.decimal,
+.pos-neg,
+.operator,
+#equal,
+#clear {
+  border-radius: 6px;
+  font-size: 2.7em;
+  text-align: center;
+  width: 80px;
+  height: 60px;
+  transition: all 0.1s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.number:hover,
+.decimal:hover,
+.pos-neg:hover,
+.operator:hover,
+#equal:hover,
+#clear:hover {
+  opacity: 0.8;
+}
+
+.number,
+.decimal,
+.pos-neg {
+  color: black;
+  background-color: rgb(230, 230, 230);
+}
+.operator,
+#equal,
+#clear {
+  color: rgb(0, 164, 200);
+  background-color: #aeaeae;
+}
+
+#multiply {
+  flex: 1;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+#equal {
+  color: white;
+  background-color: rgb(74, 174, 78);
+}
