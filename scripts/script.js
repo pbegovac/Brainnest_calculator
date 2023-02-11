@@ -1,4 +1,5 @@
 const output = document.querySelector("#output");
+
 const buttons = document.querySelectorAll("button");
 const calcHistory = document.querySelector("#calcHistory");
 let operator = "";
@@ -118,8 +119,8 @@ buttons.forEach((button) => {
   let red = Math.floor(Math.random() * 200 + 56);
   let green = Math.floor(Math.random() * 200 + 56);
   let blue = Math.floor(Math.random() * 200 + 56);
-
   button.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+
   button.addEventListener("click", () => {
     if (button.innerHTML === "C") {
       clearAll();
@@ -173,6 +174,7 @@ operations.forEach((operation) => {
         parseFloat(firstNum),
         parseFloat(secondNum)
       )}`;
+
       calcHistory.innerHTML = `${firstNum} ${operator} ${secondNum} =`;
       firstNum = calculate(
         operator,
