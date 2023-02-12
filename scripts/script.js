@@ -51,7 +51,7 @@ let errorCheck = () => {
     output.innerHTML.includes("nan") ||
     output.innerHTML.includes("undefined")
   ) {
-    output.innerHTML = "Ask your mother";
+    output.innerHTML = "Infinity";
   }
 };
 
