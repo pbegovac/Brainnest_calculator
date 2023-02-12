@@ -80,7 +80,7 @@ let firstNumOperators = (input) => {
 };
 
 let secondNumOperators = (input) => {
-  if (secondNum === "" && output.innerHTML !== "") {
+  if (firstNum !== "" && operator !== "") {
     output.innerHTML = "";
   }
   if (input === "." && secondNum.includes(".")) {
@@ -138,6 +138,7 @@ buttons.forEach((button) => {
     } else if (
       !Number.isInteger(parseFloat(button.innerHTML)) &&
       button.innerHTML !== "=" &&
+      button.innerHTML !== "^" &&
       operator === ""
     ) {
       operator = button.innerHTML;
