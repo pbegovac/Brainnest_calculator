@@ -75,6 +75,9 @@ let firstNumOperators = (input) => {
     output.innerHTML = firstNum;
     return;
   }
+  if (firstNum === "0" && input === "0" && firstNum.length === 1) {
+    return;
+  }
   firstNum += input;
   output.innerHTML += input;
 };
@@ -114,6 +117,7 @@ let clearAll = () => {
   calcHistory.innerHTML = "";
 };
 
+let lastClickedButton = "";
 buttons.forEach((button) => {
   let red = Math.floor(Math.random() * 200 + 56);
   let green = Math.floor(Math.random() * 200 + 56);
@@ -135,6 +139,7 @@ buttons.forEach((button) => {
       } else if (firstNum !== "" && operator !== "") {
         secondNumOperators(button.innerHTML);
       }
+      lastClickedButton = "number";
     } else if (
       !Number.isInteger(parseFloat(button.innerHTML)) &&
       button.innerHTML !== "=" &&
@@ -143,6 +148,16 @@ buttons.forEach((button) => {
     ) {
       operator = button.innerHTML;
       output.innerHTML = "";
+      lastClickedButton = "operator";
+    } else if (
+      !Number.isInteger(parseFloat(button.innerHTML)) &&
+      button.innerHTML !== "=" &&
+      button.innerHTML !== "^" &&
+      operator !== "" &&
+      lastClickedButton === "operator"
+    ) {
+      operator = button.innerHTML;
+      lastClickedButton = "operator";
     }
   });
 });
@@ -158,7 +173,7 @@ equal.addEventListener("click", () => {
       parseFloat(firstNum),
       parseFloat(secondNum)
     );
-    calcHistory.innerHTML = `${firstNum} ${operator} ${secondNum} =`;
+    calcHistory.innerHTML = `${firstNum} ${operator} ${secondNum}`;
   }
   errorCheck();
 });
@@ -173,7 +188,7 @@ operations.forEach((operation) => {
         parseFloat(secondNum)
       )}`;
 
-      calcHistory.innerHTML = `${firstNum} ${operator} ${secondNum} =`;
+      calcHistory.innerHTML = `${firstNum} ${operator} ${secondNum}`;
       firstNum = calculate(
         operator,
         parseFloat(firstNum),
