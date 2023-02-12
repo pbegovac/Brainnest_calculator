@@ -79,7 +79,7 @@ let firstNumOperators = (input) => {
     return;
   }
   firstNum += input;
-  output.innerHTML += input;
+  output.innerHTML = firstNum;
 };
 
 let secondNumOperators = (input) => {
@@ -106,7 +106,7 @@ let secondNumOperators = (input) => {
     return;
   }
   secondNum += input;
-  output.innerHTML += input;
+  output.innerHTML = secondNum;
 };
 
 let clearAll = () => {
