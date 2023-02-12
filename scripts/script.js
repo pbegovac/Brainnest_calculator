@@ -1,5 +1,4 @@
 const output = document.querySelector("#output");
-
 const buttons = document.querySelectorAll("button");
 const calcHistory = document.querySelector("#calcHistory");
 let operator = "";
@@ -120,7 +119,6 @@ buttons.forEach((button) => {
   let green = Math.floor(Math.random() * 200 + 56);
   let blue = Math.floor(Math.random() * 200 + 56);
   button.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
-
   button.addEventListener("click", () => {
     if (button.innerHTML === "C") {
       clearAll();
@@ -191,94 +189,3 @@ const clear = document.querySelector("#clear");
 clear.addEventListener("click", () => {
   clearAll();
 });
-
-window.onkeydown = (e) => {
-  let x = e.key;
-  let choice;
-  switch (x) {
-    case "1":
-      choice = document.querySelector("#one");
-      choice.click();
-      break;
-    case "2":
-      choice = document.querySelector("#two");
-      choice.click();
-      break;
-    case "3":
-      choice = document.querySelector("#three");
-      choice.click();
-      break;
-    case "4":
-      choice = document.querySelector("#four");
-      choice.click();
-      break;
-    case "5":
-      choice = document.querySelector("#five");
-      choice.click();
-      break;
-    case "6":
-      choice = document.querySelector("#six");
-      choice.click();
-      break;
-    case "7":
-      choice = document.querySelector("#seven");
-      choice.click();
-      break;
-    case "8":
-      choice = document.querySelector("#eight");
-      choice.click();
-      break;
-    case "9":
-      choice = document.querySelector("#nine");
-      choice.click();
-      break;
-    case "0":
-      choice = document.querySelector("#zero");
-      choice.click();
-      break;
-    case "Escape":
-      choice = document.querySelector("#clear");
-      choice.click();
-      break;
-    case "Backspace":
-      choice = document.querySelector("#backspace");
-      choice.click();
-      break;
-    case "^":
-      choice = document.querySelector("#exp");
-      choice.click();
-      break;
-    case "/":
-      choice = document.querySelector("#divide");
-      choice.click();
-      break;
-    case "*":
-      choice = document.querySelector("#multiply");
-      choice.click();
-      break;
-    case "-":
-      choice = document.querySelector("#subtract");
-      choice.click();
-      break;
-    case "+":
-      choice = document.querySelector("#add");
-      choice.click();
-      break;
-    case ".":
-      choice = document.querySelector("#decimal");
-      choice.click();
-      break;
-    case "=":
-      choice = document.querySelector("#equal");
-      choice.click();
-      break;
-    case "|":
-      choice = document.querySelector("#plus-minus");
-      choice.click();
-      break;
-    case "%":
-      choice = document.querySelector("#perc");
-      choice.click();
-      break;
-  }
-};
