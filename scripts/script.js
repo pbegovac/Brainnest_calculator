@@ -120,7 +120,9 @@ buttons.forEach((button) => {
   let blue = Math.floor(Math.random() * 200 + 56);
   button.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
 
-  button.addEventListener("click", () => {
+  button.addEventListener("click", (e) => {
+    console.log(e.target.innerHTML);
+
     if (button.innerHTML === "C") {
       clearAll();
     }
@@ -159,8 +161,6 @@ equal.addEventListener("click", () => {
       parseFloat(secondNum)
     );
     calcHistory.innerHTML = `${firstNum} ${operator} ${secondNum} =`;
-    firstNum = calculate(operator, parseFloat(firstNum), parseFloat(secondNum));
-    secondNum = "";
   }
   errorCheck();
 });
