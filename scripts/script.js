@@ -120,9 +120,7 @@ buttons.forEach((button) => {
   let blue = Math.floor(Math.random() * 200 + 56);
   button.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
 
-  button.addEventListener("click", (e) => {
-    console.log(e.target.innerHTML);
-
+  button.addEventListener("click", () => {
     if (button.innerHTML === "C") {
       clearAll();
     }
